@@ -1,0 +1,72 @@
+body, html {
+    padding: 0;
+    margin: 0;
+}
+.container {
+    padding: 15px;
+}
+
+.cards-list {
+    margin-left: -37px;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+
+.card {
+    position: relative;
+    float: left;
+    width: 39px;
+    height: 25px;
+    text-indent: -9999px;
+    margin-right: 4px;
+
+    background-position: center center; 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    margin-right: 4px;
+    border: 2px solid transparent; 
+}
+
+.card.visa { 
+    background-image: url(../img/card-visa.png);
+
+}
+
+.card.master {
+    background-image: url(../img/card-master.png);
+}
+
+.card.amex {
+    background-image: url(../img/amex.png);
+}
+
+.card.discover {
+    background-image: url(../img/card-discover.png);
+}
+
+.card.jcb {
+    background-image: url(../img/jcb.png);
+}
+
+.card.mir {
+    background-image: url(../img/icons8-мир-48.png);
+}
+
+.selected {
+    border-color: blue;
+    border-radius: 5px;
+}
+
+.card-number-input {
+    width: 170px;
+}
+
+.btn {
+    background-color: green;
+    color: white
+}
+
+.result {
+    margin-top: 10px;
+}
