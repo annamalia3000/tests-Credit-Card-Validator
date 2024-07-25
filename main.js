@@ -41,10 +41,10 @@ function getCardType(cardNumber) {
     return 'unknown';
   }
 }
-;// CONCATENATED MODULE: ./src/js/app.js
+;// CONCATENATED MODULE: ./src/js/handleFormSubmit.js
 
 
-document.querySelector('.card-number-form').addEventListener('submit', e => {
+function handleFormSubmit(e) {
   e.preventDefault();
   const cardNumber = document.querySelector('.card-number-input').value;
   const resultElement = document.querySelector('.result');
@@ -61,7 +61,69 @@ document.querySelector('.card-number-form').addEventListener('submit', e => {
   } else {
     resultElement.textContent = 'Card is not valid';
   }
-});
+}
+;// CONCATENATED MODULE: ./src/js/widget.js
+
+class CardFormWidget {
+  constructor(parentEl) {
+    this.parentEl = parentEl;
+  }
+  static get markup() {
+    return `
+        <div class="credit-cards">
+            <h3 class="title">Check your credit card number</h3>
+            <ul class="cards-list">
+                <li class="card-item">
+                    <span class="card visa">Visa</span>
+                </li>
+                <li class="card-item">
+                    <span class="card master">Master</span>
+                </li>
+                <li class="card-item">
+                    <span class="card amex">Amex</span>
+                </li>
+                <li class="card-item">
+                    <span class="card discover">Discover</span>
+                </li>
+                <li class="card-item">
+                    <span class="card jcb">JCB</span>
+                </li>
+                <li class="card-item">
+                    <span class="card mir">Mir</span>
+                </li>
+            </ul>
+            <form class="card-number-form">
+                <input class="card-number-input" type="text" placeholder="Credit card number">
+                <button type="submit" class="btn">Click to Validate</button>
+            </form>
+            <div class="result"></div>
+        </div>
+         `;
+  }
+  static get selector() {
+    return '.card-number-form';
+  }
+  static get input() {
+    return '.card-number-input';
+  }
+  static get submit() {
+    return '.btn';
+  }
+  bindToDOM() {
+    this.parentEl.innerHTML = CardFormWidget.markup;
+    this.element = this.parentEl.querySelector(CardFormWidget.selector);
+    this.input = this.element.querySelector(CardFormWidget.input);
+    this.submit = this.element.querySelector(CardFormWidget.submit);
+    this.element.addEventListener('submit', handleFormSubmit.bind(this));
+  }
+}
+;// CONCATENATED MODULE: ./src/js/app.js
+
+
+const container = document.querySelector('.container');
+const app_form = new CardFormWidget(container);
+app_form.bindToDOM();
+document.querySelector('.card-number-form').addEventListener('submit', handleFormSubmit);
 ;// CONCATENATED MODULE: ./src/index.js
 
 
