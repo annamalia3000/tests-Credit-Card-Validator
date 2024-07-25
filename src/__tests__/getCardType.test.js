@@ -1,4 +1,4 @@
-import getCardType from '../js/getCardType';
+import { getCardType } from '../js/getCardType';
 
 describe('getCardType', () => {
     test.each([

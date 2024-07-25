@@ -1,4 +1,4 @@
-export default function isValidCreditCardNumber(cardNumber) {
+export function isValidCreditCardNumber(cardNumber) {
     const cleanedNumber = cardNumber.replace(/\D/g, '');
     
     if (!/^\d+$/.test(cleanedNumber)) {

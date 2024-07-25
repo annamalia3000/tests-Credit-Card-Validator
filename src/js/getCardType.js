@@ -1,4 +1,4 @@
-export default function getCardType(cardNumber) {
+export function getCardType(cardNumber) {
     const cardNumberCleaned = cardNumber.replace(/\D/g, '');
 
     if (/^4/.test(cardNumberCleaned)) {
