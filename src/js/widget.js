@@ -35,7 +35,7 @@ export class CardFormWidget {
             </form>
             <div class="result"></div>
         </div>
-         `;
+        `;
     }
 
     static get selector() {
@@ -55,7 +55,7 @@ export class CardFormWidget {
 
         this.element = this.parentEl.querySelector(CardFormWidget.selector);
         this.input = this.element.querySelector(CardFormWidget.input);
-        this.submit= this.element.querySelector(CardFormWidget.submit);
+        this.submit = this.element.querySelector(CardFormWidget.submit);
 
         this.element.addEventListener('submit', handleFormSubmit.bind(this));
     }

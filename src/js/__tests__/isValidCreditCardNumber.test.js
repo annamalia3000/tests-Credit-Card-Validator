@@ -1,4 +1,4 @@
-import { isValidCreditCardNumber } from '../js/isValidCreditCardNumber';
+import { isValidCreditCardNumber } from '../isValidCreditCardNumber';
 
 test('should return valid value', () => {
     const result = isValidCreditCardNumber('4916206147525891');

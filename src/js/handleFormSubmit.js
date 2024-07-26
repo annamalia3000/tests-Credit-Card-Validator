@@ -4,8 +4,10 @@ import { getCardType } from './getCardType';
 export function handleFormSubmit(e) {
     e.preventDefault();
 
-    const cardNumber = document.querySelector('.card-number-input').value;
+    const cardNumberInput = document.querySelector('.card-number-input');
     const resultElement = document.querySelector('.result');
+
+    const cardNumber = cardNumberInput.value.trim(); 
 
     if (isValidCreditCardNumber(cardNumber)) {
         const cardType = getCardType(cardNumber);
@@ -15,11 +17,12 @@ export function handleFormSubmit(e) {
         document.querySelectorAll('.card').forEach(card => {
             card.classList.remove('selected');
         });
-    
+
         if (cardType !== 'unknown') {
             document.querySelector(`.card.${cardType}`).classList.add('selected');
         }
     } else {
         resultElement.textContent = 'Card is not valid';
+        resultElement.className = 'result invalid';
     }
 }

@@ -1,34 +1,34 @@
-import { getCardType } from '../js/getCardType';
+import { getCardType } from '../getCardType';
 
 describe('getCardType', () => {
     test.each([
         [
             '4794736211237236', 
-            'visa'
+            'Visa'
         ],  
         [
             '4485 3239 8177 7739 251', 
-            'visa'
+            'Visa'
         ],  
         [
             '5386750880543528', 
-            'master'
+            'Master'
         ], 
         [
             '376290545403944', 
-            'amex'
+            'Amex'
         ],    
         [
             '6011455218707629407', 
-            'discover'
+            'Discover'
         ], 
         [
             '3589069387307699429', 
-            'jcb'
+            'JCB'
         ],   
         [
             '2200200000000000', 
-            'mir'
+            'Mir'
         ],   
         [
             '123456781234567', 
